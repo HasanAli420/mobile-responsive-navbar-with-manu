@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: all .3s ease;
+}
+
+html{
+    font-size: 18px;
+    overflow-x: hidden;
+}
+
+body{
+    background: #f9f9f9;
+}
+
+
+/* ==== header area ==== */
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    padding: 16px 9%;
+    background: #fff;
+}
+
+
+.header .logo a{
+    font-size: 30px;
+    color: blue;
+}
+
+.header .navbar a{
+    margin-right: 25px;
+    font-size: 22px;
+    color: purple;
+}
+
+.header .navbar a:hover{
+    color: red;
+}
+
+.header label{
+    font-size: 33px;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.header input{
+    display: none;
+}
+
+/* ==== header area ==== */
+
+
+
+
+
+/* ==== responive area ==== */
+
+@media(max-width: 768px){
+
+    .header label{
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #f9f9f9;
+        padding: 0 8px;
+        border-bottom: 1px solid rgba(0,0,0,.1);
+        box-shadow: 0 8px 16px rgba(0,0,0,.2);
+        transform-origin: top;
+        transform: scaleY(0);
+        opacity: 0;
+    }
+
+    .header .navbar a{
+        display: block;
+        margin: 15px;
+        padding: 15px;
+        text-align: left;
+        background: #fff;
+        border: 1px solid rgba(0,0,0,.1);
+        border-left: 5px solid red;
+    }
+
+    .header input:checked ~ .navbar{
+        transform: scaleY(1);
+        opacity: 1;
+    }
+    
+    .header input:checked ~ label::before{
+        content: '\f00d';
+    }
+}
+
+/* ==== responive area ==== */
